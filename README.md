@@ -1,4 +1,4 @@
-# Project : Storybook 🍒
+# Project : Storybook 🦋
 
 * Node/Express 💌 
 * Mongoose + MongoDB 💌 
