@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
+// Load User Model
+require('./models/User');
+
 // Passport Config
 require('./config/passport')(passport);
 
@@ -17,7 +20,8 @@ mongoose.Promise = global.Promise;
 // Mongoose Connect
 mongoose
   .connect(keys.mongoURI, {
-    useMongoClient: true
+    // useMongoClient: true,
+    useNewUrlParser: true
   })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
