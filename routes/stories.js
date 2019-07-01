@@ -88,10 +88,16 @@ router.put('/:id', (req, res) => {
     story.status = req.body.status;
     story.allowComments = allowComments;
 
-    story.save()
-    .then(story => {
+    story.save().then(story => {
       res.redirect('/dashboard');
     });
+  });
+});
+
+// Delete Story
+router.delete('/:id', (req, res) => {
+  Story.remove({ _id: req.params.id }).then(() => {
+    res.redirect('/dashboard');
   });
 });
 
